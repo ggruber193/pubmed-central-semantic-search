@@ -2,8 +2,8 @@ import gradio as gr
 from sentence_transformers import SentenceTransformer
 from qdrant_client import QdrantClient
 
-from backend.database.qdrant import QdrantDatabase
-from frontend.responses import QdrantQueryResponses, QdrantArticleResponse
+from src.backend.database.qdrant import QdrantDatabase
+from src.frontend.responses import QdrantQueryResponses, QdrantArticleResponse
 import torch
 
 import os
