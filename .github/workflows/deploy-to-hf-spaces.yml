@@ -27,9 +27,10 @@ jobs:
           mv src app.py requirements.txt push-hf-dir
           cd push-hf-dir
           git init --initial-branch=main
+          git config pull.rebase false
           git config user.name "GitHub Actions Bot"
           git config user.email "deployment"
-          git add src requirements.txt app.py
+          git add .
           git commit -m "Changes from 'https://github.com/ggruber193/pubmed-central-semantic-search'"
           git pull https://yeastcoast:$HF_TOKEN@huggingface.co/spaces/yeastcoast/pubmed-central-semantic-search main
           git push --force https://yeastcoast:$HF_TOKEN@huggingface.co/spaces/yeastcoast/pubmed-central-semantic-search main
