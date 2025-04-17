@@ -22,7 +22,7 @@ jobs:
       - name: Setup git config
         run: |
           git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
+          git config user.email "deployment"
       - name: Create commit
         env:
             HF_TOKEN: ${{ secrets.HF_TOKEN }}
