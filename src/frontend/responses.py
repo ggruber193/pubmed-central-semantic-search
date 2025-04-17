@@ -44,9 +44,10 @@ class QdrantArticleResponse:
 
     @staticmethod
     def section_html(paragraphs: list[str]):
+        _paragraph_html = '\n'.join([f'<p>{i}</p>' for i in paragraphs])
         section = f"""
         <section>
-            {'\n'.join([f'<p>{i}</p>' for i in paragraphs])}
+            {_paragraph_html}
         </section>
         """
         return section
@@ -65,9 +66,10 @@ class QdrantArticleResponse:
             """
             return html_text
         def section_html(paragraphs: list[str]):
+            _section_html = '\n'.join([f'<p>{i}</p>' for i in paragraphs])
             section = f"""
             <section>
-                {'\n'.join([f'<p>{i}</p>' for i in paragraphs])}
+                {_section_html}
             </section>
             """
             return section
