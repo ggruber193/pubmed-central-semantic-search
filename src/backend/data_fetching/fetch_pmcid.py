@@ -1,4 +1,4 @@
-from scientificpapers_rag.data_fetching.data_fields import DataFields
+from src.backend.data_fetching.data_fields import DataFields
 
 
 def fetch_from_pmcid(pmcid: str):

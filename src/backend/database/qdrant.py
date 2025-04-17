@@ -12,7 +12,7 @@ from tqdm import tqdm
 from hashlib import sha3_512
 
 
-from backend.data_fetching.data_fetcher import DataFetcher, ChunkLevel
+from src.backend.data_fetching.data_fetcher import DataFetcher, ChunkLevel
 
 
 class QdrantSchema(str, Enum):

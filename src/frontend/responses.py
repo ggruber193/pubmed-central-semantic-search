@@ -4,7 +4,7 @@ from typing import Literal, Tuple
 from qdrant_client.models import ScoredPoint
 from qdrant_client.conversions import common_types as types
 
-from backend.database.qdrant import ScientificPapersMainSchema, ScientificPapersChunksSchema
+from src.backend.database.qdrant import ScientificPapersMainSchema, ScientificPapersChunksSchema
 
 
 class QdrantArticleResponse:
