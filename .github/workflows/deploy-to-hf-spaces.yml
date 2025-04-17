@@ -29,8 +29,8 @@ jobs:
           git init --initial-branch=main
           git config user.name "GitHub Actions Bot"
           git config user.email "deployment"
-          git add .
+          git add src requirements.txt app.py
           git commit -m "Changes from 'https://github.com/ggruber193/pubmed-central-semantic-search'"
-          git pull
+          git pull https://yeastcoast:$HF_TOKEN@huggingface.co/spaces/yeastcoast/pubmed-central-semantic-search main
           git push --force https://yeastcoast:$HF_TOKEN@huggingface.co/spaces/yeastcoast/pubmed-central-semantic-search main
           
