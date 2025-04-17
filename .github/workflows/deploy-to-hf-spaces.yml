@@ -16,6 +16,7 @@ jobs:
           sparse-checkout: |
             src
             app.py
+            requirements.txt
           sparse-checkout-cone-mode: false
           fetch-depth: 0
           lfs: true
