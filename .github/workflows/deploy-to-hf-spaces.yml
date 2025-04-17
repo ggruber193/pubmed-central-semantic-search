@@ -25,6 +25,7 @@ jobs:
           git config user.email "<>"
       - name: Create commit
         run : |
+          git init
           git commit -m "Changes from 'https://github.com/ggruber193/pubmed-central-semantic-search'"
       - name: Push to hub
         env:
