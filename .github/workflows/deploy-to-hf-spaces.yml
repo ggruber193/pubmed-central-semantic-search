@@ -10,17 +10,28 @@ jobs:
   sync-to-hub:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
+          ref: deployment
           sparse-checkout: |
             src
             app.py
             requirements.txt
           sparse-checkout-cone-mode: false
           fetch-depth: 0
-          lfs: true
-      - name: Push to hub
+      - name: Create commit
         env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push https://yeastcoast:$HF_TOKEN@huggingface.co/spaces/yeastcoast/pubmed-central-semantic-search master:main
+            HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run : |
+          mkdir -p push-hf-dir
+          mv src app.py requirements.txt push-hf-dir
+          cd push-hf-dir
+          git init --initial-branch=main
+          git config pull.rebase false
+          git config user.name "GitHub Actions Bot"
+          git config user.email "deployment"
+          git add .
+          git commit -m "Changes from 'https://github.com/ggruber193/pubmed-central-semantic-search'"
+          git pull https://yeastcoast:$HF_TOKEN@huggingface.co/spaces/yeastcoast/pubmed-central-semantic-search main --allow-unrelated-histories
+          git push --force https://yeastcoast:$HF_TOKEN@huggingface.co/spaces/yeastcoast/pubmed-central-semantic-search main
+          
