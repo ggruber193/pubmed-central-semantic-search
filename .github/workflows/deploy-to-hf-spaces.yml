@@ -28,7 +28,7 @@ jobs:
             HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run : |
           mkdir -p push-hf-dir
-          mv src app.py requirements push-hf-dir
+          mv src app.py requirements.txt push-hf-dir
           cd push-hf-dir
           git init --initial-branch=main
           git add .
