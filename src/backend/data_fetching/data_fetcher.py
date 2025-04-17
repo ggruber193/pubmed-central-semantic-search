@@ -2,7 +2,7 @@ from enum import Enum
 from datasets import Dataset
 from pathlib import Path
 
-from backend.data_fetching.data_fields import DataFields
+from src.backend.data_fetching.data_fields import DataFields
 
 class ChunkLevel(Enum):
     SENTENCE = ("sentence", '. ')
@@ -48,7 +48,7 @@ class DataFetcher:
     def from_pmcid(self, pmcid: str | list[str]):
         if isinstance(pmcid, str):
             pmcid = [pmcid]
-        from backend.data_fetching.fetch_pmcid import (fetch_from_pmcid)
+        from src.backend.data_fetching.fetch_pmcid import (fetch_from_pmcid)
         output = []
         for pmcid in pmcid:
             article_out = fetch_from_pmcid(pmcid)
