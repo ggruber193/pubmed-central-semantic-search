@@ -19,10 +19,6 @@ jobs:
             requirements.txt
           sparse-checkout-cone-mode: false
           fetch-depth: 0
-      - name: Setup git config
-        run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "deployment"
       - name: Create commit
         env:
             HF_TOKEN: ${{ secrets.HF_TOKEN }}
@@ -31,6 +27,8 @@ jobs:
           mv src app.py requirements.txt push-hf-dir
           cd push-hf-dir
           git init --initial-branch=main
+          git config user.name "GitHub Actions Bot"
+          git config user.email "deployment"
           git add .
           git commit -m "Changes from 'https://github.com/ggruber193/pubmed-central-semantic-search'"
           git pull
