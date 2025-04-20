@@ -10,7 +10,7 @@ import os
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-qdrant_url = os.environ.get("QDRANT_URL", "http://localhost:6333")
+qdrant_url = os.environ.get("QDRANT_URL", ":memory:")
 qdrant_api_key = os.environ.get("QDRANT_API_KEY", "")
 
 client = QdrantClient(url=qdrant_url, api_key=qdrant_api_key)
