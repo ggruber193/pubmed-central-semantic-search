@@ -18,8 +18,6 @@ Topics covered in the papers of the live demo:
 
 ---
 
----
-
 ## 📑 Table of Contents
 
 - [Introduction](#introduction)
