@@ -11,6 +11,11 @@ You can try the app instantly without installing anything:
 
 > **Note:** The demo uses a Qdrant-hosted vector store preloaded with **1,000 scientific papers** from **PubMed Central (PMC)**.
 
+Topics covered in the papers of the live demo:
+<p align="center">
+  <img src="sample_paper_topics.png" alt="Sublime's custom image"/>
+</p>
+
 ---
 
 ---
